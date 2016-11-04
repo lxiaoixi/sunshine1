@@ -11,13 +11,13 @@ router.get('/type', function(req, res, next) {
 })
 
 router.post('/type', function(req, res, next) {
-    var name = req.body.articletype;
+    var typeName = req.body.articletype;
     var description = req.body.description;
-    if (name == undefined || name == "") {
+    if (typeName == undefined || typeName == "") {
         res.render(error);
     }
     var articleType = new ArticleType({
-        name: name,
+        typeName: typeName,
         description: description
     });
     articleType.save(function(err, articletype) {
@@ -66,22 +66,12 @@ router.post('/add', function(req, res, next) {
 
 //显示文章列表
 router.get('/list', function(req, res, next) {
-    Article.find({}, function(err, Articles) {
-        /*var articleID = [];
-        var typeNames = [];
-        Articles.forEach(function(err, result) {
-            articleID.push(result.articleType);
+    Article
+        .find({})
+        .populate('articleType')
+        .exec(function(err, Articles) {
+            res.render('article-list', { title: '文章列表', Articles: Articles });
         })
-        console.log(articleID);
-        articleID.forEach(function(err, result) {
-            ArticleType.find({ _id: result }, function(err, articleType) {
-                typeNames.push(articleType.name);
-            })
-        })*/
-
-
-        res.render('article-list', { title: '文章列表', Articles: Articles });
-    })
 
 })
 

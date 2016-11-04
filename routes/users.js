@@ -40,7 +40,5 @@ router.get('/ping', function(req, res, next) {
     res.status(200).send("pong!");
 });
 
-router.get('/push', function(req, res, next) {
-    res.render('chart', { title: '发表' });
-})
+
 module.exports = router;

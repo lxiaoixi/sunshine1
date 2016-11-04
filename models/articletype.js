@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ArticleType = new Schema({
-    name: String,
+    typeName: String,
     description: String,
     isExpired: Boolean
 });
