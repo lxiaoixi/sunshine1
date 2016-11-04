@@ -53,7 +53,7 @@ router.post('/add', function(req, res, next) {
         author: author,
         content: content,
         pushTime: pushTime,
-
+        procuratorate: procuratorate,
         articleType: articleType
     });
 
@@ -68,7 +68,7 @@ router.post('/add', function(req, res, next) {
 router.get('/list', function(req, res, next) {
     Article
         .find({})
-        .populate('articleType')
+        .populate('articleType procuratorate')
         .exec(function(err, Articles) {
             res.render('article-list', { title: '文章列表', Articles: Articles });
         })

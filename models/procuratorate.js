@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var Procuratorate = new Schema({
 
-    name: String,
+    proName: String,
     level: String,
     parent: { type: mongoose.Schema.Types.ObjectId, ref: 'Procuratorate' },
     province: String,

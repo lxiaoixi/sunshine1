@@ -17,13 +17,13 @@ router.get('/procuratorate', function(req, res, next) {
 })
 
 router.post('/procuratorate', function(req, res, next) {
-    var name = req.body.jcy;
+    var proName = req.body.jcy;
     var level = req.body.level;
     var province = req.body.province;
     var address = req.body.address;
 
     var procuratorate = new Procuratorate({
-        name: name,
+        proName: proName,
         level: level,
         province: province,
         address: address
