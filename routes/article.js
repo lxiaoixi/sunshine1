@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Article = require('../models/article');
 var ArticleType = require('../models/articletype');
-
+var Procuratorate = require('../models/procuratorate');
 /* GET users listing. */
 
 //文章类型的存储
@@ -30,9 +30,9 @@ router.post('/type', function(req, res, next) {
 //获取发表文章页面
 router.get('/add', function(req, res, next) {
     ArticleType.find({}, function(err, articletypes) {
-
-        res.render('pushArticle', { title: '发表文章', articletypes: articletypes });
-
+        Procuratorate.find({}, function(err, procuratorates) {
+            res.render('pushArticle', { title: '发表文章', articletypes: articletypes, procuratorates: procuratorates });
+        })
 
     })
 
