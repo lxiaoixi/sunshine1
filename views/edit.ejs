@@ -14,17 +14,17 @@
 
         <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
-                Amaze UI 表单
+                稿件管理
             </div>
             <ol class="am-breadcrumb">
                 <li><a href="#" class="am-icon-home">首页</a></li>
-                <li><a href="#">表单</a></li>
-                <li class="am-active">Amaze UI 表单</li>
+                <li><a href="#">稿件管理</a></li>
+                <li class="am-active">编辑稿件</li>
             </ol>
             <div class="tpl-portlet-components">
                 <div class="portlet-title">
                     <div class="caption font-green bold">
-                        <span class="am-icon-code"></span> 编辑文章
+                        <span class="am-icon-code"></span> 编辑稿件
                     </div>
                    
 
@@ -59,12 +59,26 @@
                                      
                                         <select data-am-selected="{btnSize: 'sm'}" name="articleType" id="user-weibo" >
                                         <%articletypes.forEach(function(articletype){ %>
-                                            <option value="<%=articletype._id%>"><%=articletype.name%></option>
+                                            <option value="<%=articletype._id%>"><%=articletype.typeName%></option>
                                             <%})%>
                                         </select>
                                    
                                     </div>
                                 </div>
+
+                                 <div class="am-form-group">
+                                    <label for="user-weibo" class="am-u-sm-3 am-form-label">检察院归属 <span class="tpl-form-line-small-title">Type</span></label>
+                                    <div class="am-u-sm-12 am-u-md-3">
+                                     
+                                        <select data-am-selected="{btnSize: 'sm'}" name="procuratorate" id="user-weibo" >
+                                        <%procuratorates.forEach(function(procuratorate){ %>
+                                            <option value="<%=procuratorate._id%>"><%=procuratorate.proName%></option>
+                                            <%})%>
+                                        </select>
+                                   
+                                    </div>
+                                </div>
+                                
                               <div class="am-form-group">
                                     <label for="user-name" class="am-u-sm-3 am-form-label">作者 <span class="tpl-form-line-small-title">Author</span></label>
                                     <div class="am-u-sm-9">
