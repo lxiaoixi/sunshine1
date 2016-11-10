@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+    <%- include('admin/portal/head') %>
+    <script src="/javascripts/echarts.min.js"></script>
+</head>
+
+<body data-type="generalComponents">
+    <%- include('admin/portal/header') %>
+
+    <div class="tpl-page-container tpl-page-header-fixed">
+         <%- include('admin/portal/sidernav') %>
+        </div>
+
+
+
+
+        <div class="tpl-content-wrapper">
+            <div class="tpl-content-page-title">
+                编辑文章类型
+            </div>
+            <ol class="am-breadcrumb">
+                <li><a href="#" class="am-icon-home">首页</a></li>
+                <li><a href="#">表单</a></li>
+                <li class="am-active">编辑文章类型</li>
+            </ol>
+            <div class="tpl-portlet-components">
+                <div class="portlet-title">
+                    <div class="caption font-green bold">
+                        <span class="am-icon-code"></span> 编辑文章类型
+                    </div>
+                    <div class="tpl-portlet-input tpl-fz-ml">
+                        <div class="portlet-input input-small input-inline">
+                            
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="tpl-block">
+
+                    <div class="am-g">
+                        <div class="tpl-form-body tpl-form-line">
+                        
+                            <form action='/article/typeUpdate' method='post' class="am-form tpl-form-line-form">
+                                <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">文章类型 <span class="tpl-form-line-small-title">Type</span></label>
+                                    <div class="am-u-sm-9">
+                                        <input type="hidden" name="_id" value="<%=articletypes._id %>">
+                                        <input type="text" class="tpl-form-input" id="user-name" name='articletype' value="<%=articletypes.typeName %>" placeholder="请输入要定义的文章类型">
+                                        <small>请定义文章类型10-20字左右。</small>
+                                    </div>
+                                </div>
+
+                                                            
+                                
+                                <div class="am-form-group">
+                                    <label for="user-intro" class="am-u-sm-3 am-form-label">文章类型描述</label>
+                                    <div class="am-u-sm-9">
+                                        
+                                        <textarea class="" rows="3" id="user-intro" name='content'><%=articletypes.description %></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <div class="am-u-sm-9 am-u-sm-push-3">
+                                        <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">确认修改</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/amazeui.min.js"></script>
+    <script src="/javascripts/iscroll.js"></script>
+    <script src="/javascripts/app.js"></script>
+</body>
+
+</html>

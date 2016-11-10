@@ -14,12 +14,12 @@
          <%- include('admin/portal/sidernav') %>
         <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
-                Amaze UI 文字列表
+                文章列表
             </div>
             <ol class="am-breadcrumb">
                 <li><a href="#" class="am-icon-home">首页</a></li>
-                <li><a href="#">Amaze UI CSS</a></li>
-                <li class="am-active">文字列表</li>
+                <li><a href="#">文章</a></li>
+                <li class="am-active">文章列表</li>
             </ol>
             <div class="tpl-portlet-components">
                 <div class="portlet-title">
@@ -102,6 +102,15 @@
                                                 <div class="am-btn-toolbar">
                                                     <div class="am-btn-group am-btn-group-xs">
                                                      <a href="/article/edit?_id=<%=Articles[i]._id%>" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
+                                                        
+                                                   
+                                                    </div>
+                                                </div>
+                                            </td>
+                                             <td>
+                                                <div class="am-btn-toolbar">
+                                                    <div class="am-btn-group am-btn-group-xs">
+                                                     
                                                         
                                                      <a href="/article/del?_id=<%=Articles[i]._id%>" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</a>
                                                     </div>
