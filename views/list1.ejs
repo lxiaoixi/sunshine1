@@ -18,7 +18,7 @@
 <div class="admin-content">
     <div class="admin-content-body">
       <div class="am-cf am-padding am-padding-bottom-0">
-        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">稿件管理</strong> / <small>类型列表</small></div>
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">稿件管理</strong> / <small>稿件列表</small></div>
       </div>
 
       <hr>
@@ -62,28 +62,41 @@
             <table class="am-table am-table-striped am-table-hover table-main">
               <thead>
               <tr>
-                <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">文章类型名称</th><th class="table-type">描述</th><th class="table-set">操作</th>
+                <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">标题</th><th class="table-type">类别</th><th class="table-author am-hide-sm-only">作者</th><th class="table-date am-hide-sm-only">修改日期</th><th class="table-set">操作</th>
               </tr>
               </thead>
               <tbody>
-               <%for(var i=0;i<articletypes.length;i++){ %>
+               <%for(var i=0;i<Articles.length;i++){ %>
               <tr>
                 <td><input type="checkbox" /></td>
                 <td><%=i+1%></td>
-                <td><a href="#"><%=articletypes[i].typeName%></a></td>
-                <td><%=articletypes[i].description%></td>
+                <td><a href="#"><%=Articles[i].title%></a></td>
+                <td><%=Articles[i].articleType.typeName%></td>
+                <td><%=Articles[i].procuratorate.proName%></td>
+                <td class="am-hide-sm-only"><%=Articles[i].author%></td>
+                <td class="am-hide-sm-only"><%=Articles[i].pushTime%></td>
                 <td>
                   <div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">
-                      <a href="/article/typeEdit?_id=<%=articletypes[i]._id%>" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
-
-                      <a href="/article/typeDel?_id=<%=articletypes[i]._id%>" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</a>
-
+          
+                       <a href="/article/edit?_id=<%=Articles[i]._id%>" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
                     </div>
                   </div>
                 </td>
+
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                                                     
+                                                        
+                        <a href="/article/del?_id=<%=Articles[i]._id%>" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</a>
+                     </div>
+                    </div>
+                </td>
               </tr>
-              <%}%>
+               <%}%>
+             
               </tbody>
             </table>
             <div class="am-cf">

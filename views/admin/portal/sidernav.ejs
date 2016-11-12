@@ -1,426 +1,67 @@
-<div class="tpl-left-nav tpl-left-nav-hover">
-            <div class="tpl-left-nav-title">
-                检察院系统管理平台
-            </div>
-            <div class="tpl-left-nav-list">
-                <ul class="tpl-left-nav-menu">
-                    <li class="tpl-left-nav-item">
-                        <a href="/" class="nav-link active">
-                            <i class="am-icon-home"></i>
-                            <span>首页</span>
-                        </a>
-                    </li>
-                   
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>检察院管理</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>添加检察院</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>检察院列表</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                    
-								</a>
-                            </li>
-                        </ul>
-                    </li>
+  <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+    <div class="am-offcanvas-bar admin-offcanvas-bar">
+      <ul class="am-list admin-sidebar-list">
+        <li><a href="admin-index.html"><span class="am-icon-home"></span> 首页</a></li>
+        <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-file"></span> 稿件管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
+            <li id="articleadd"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>新增稿件</a></li>
+            <li id="articlelist"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>稿件列表</a></li>
+            <li id="check"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>审核稿件</a></li>
+            <li id="typeadd"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>新增类别</a></li>
+            <li id="typelist"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>类别列表</a></li>
+            <li id="out"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>外部稿件</a></li>
+          </ul>
+        </li>
 
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>用户管理</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>增加用户</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>用户列表</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                    
-								</a>
-                            </li>
-                        </ul>
-                    </li>
+        <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav2'}"><span class="am-icon-file"></span> 媒体库<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">
+            <li id="vedio"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>视频信息</a></li>
+            <li id="image"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>图片信息</a></li>
+            <li id="audio"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>音频信息</a></li>
+          </ul>
+        </li>
 
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>权限管理</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>增加角色</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>角色列表</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>增加权限</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>权限列表</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>公司/律所管理</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>公司列表</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>律所列表</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>律所信息</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                </li>
-                        </ul>
-                    </li>
+        <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav3'}"><span class="am-icon-file"></span> 一键发布<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav3">
+            <li id="towechat"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>发布到微信</a></li>
+            <li id="toweibo"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>发布到微博</a></li>
+            <li id="toweb"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>发布到网站</a></li>
+            <li id="tofirt"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>发布到头条</a></li>
+          </ul>
+        </li>
 
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>稿件管理</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="/article/add">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>新增稿件</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="/article/list">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>稿件列表</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>审核稿件</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="/article/type">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>新增类别</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                  <a href="/article/typeList">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>类别列表</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>外部稿件</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>媒体库</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>视频信息</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>图片信息</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>音频信息</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                </li>
-                        </ul>
-                    </li>
+        <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav4'}"><span class="am-icon-file"></span> 系统管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav4">
+            <li id="setsystem"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>系统设置</a></li>
+            <li id="setwechat"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>微信设置</a></li>
+            <li id="setweibo"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>微博设置</a></li>
+            <li id="setweb"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>网站设置</a></li>
+            <li id="setfirst"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>头条设置</a></li>
+            <li id="setsubscribe "><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>订阅设置</a></li>
+            <li id="setbackup"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>数据备份</a></li>
+            <li id="setoption"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>操作记录</a></li>
+            <li id="settouch"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>触屏设置</a></li>
+            <li id="setprojector"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>投影仪设置</a></li>
+          </ul>
+        </li>
+      </ul>
 
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>一键发布</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>发布到微信</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>发布到微博</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>发布到网站</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>发布到头条</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>数据统计</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>发稿量统计</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>阅读量统计</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>转发量统计</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                </li>
-                        </ul>
-                    </li>
-
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>法律法规</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>录入法律文件</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>导入法律文件</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>法律文件列表</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                </li>
-                        </ul>
-                    </li>
-
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>案件管理</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>录入案件</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>案件列表</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 </li>
-                        </ul>
-                    </li>
-
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>预约申请管理</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>检举信息</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>律师预约</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>档案查询预约</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>案件查询预约</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>公告管理</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>起草公告</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>发件箱</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>收件箱</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>垃圾箱</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="tpl-left-nav-item">
-                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-table"></i>
-                            <span>系统管理</span>
-                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                        </a>
-                        <ul class="tpl-left-nav-sub-menu">
-                            <li>
-                                <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>系统设置</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>微信设置</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>微博设置</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>网站设置</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>头条设置</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>订阅设置</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>数据备份</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>操作记录</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 <a href="table-font-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>触摸屏设置</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                </a>
-                                <a href="table-images-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>投影仪设置</span>
-                                     <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                                 </a>
-                                 </li>
-                        </ul>
-                    </li>
-                    
-                    <li class="tpl-left-nav-item">
-                        <a href="/users/login" class="nav-link tpl-left-nav-link-list">
-                            <i class="am-icon-key"></i>
-                            <span>登录</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+      <div class="am-panel am-panel-default admin-sidebar-panel">
+        <div class="am-panel-bd">
+          <p><span class="am-icon-bookmark"></span> 公告</p>
+          <p>时光静好，与君语；细水流年，与君同。—— Amaze UI</p>
         </div>
+      </div>
+
+      <div class="am-panel am-panel-default admin-sidebar-panel">
+        <div class="am-panel-bd">
+          <p><span class="am-icon-tag"></span> wiki</p>
+          <p>Welcome to the Amaze UI wiki!</p>
+        </div>
+      </div>
+    </div>
+  </div>

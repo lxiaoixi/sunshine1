@@ -39,4 +39,32 @@ router.get('/list', function(req, res, next) {
 
     res.render('edit', { title: '文章列表' });
 })
+router.get('/list1', function(req, res, next) {
+
+    res.render('list1', { title: '文章列表'});
+})
+router.get('/list2', function(req, res, next) {
+
+    res.render('list2', { title: '文章类型列表'});
+})
+router.get('/list3', function(req, res, next) {
+
+    res.render('list3', { title: '检举信息列表'});
+})
+router.get('/input', function(req, res, next) {
+
+    res.render('input', { title: '新增稿件'});
+})
+router.get('/input1', function(req, res, next) {
+
+    res.render('input1', { title: '新增稿件类型'});
+})
+router.get('/input2', function(req, res, next) {
+
+    res.render('input2', { title: '新增主任名单'});
+})
+router.get('/input3', function(req, res, next) {
+
+    res.render('input3', { title: '新增街道联络员名单'});
+})
 module.exports = router;
