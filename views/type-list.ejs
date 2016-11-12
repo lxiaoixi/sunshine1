@@ -33,19 +33,7 @@
             </div>
           </div>
         </div>
-        <div class="am-u-sm-12 am-u-md-3">
-          <div class="am-form-group">
-            <select data-am-selected="{btnSize: 'sm'}">
-              <option value="option1">所有类别</option>
-              <option value="option2">IT业界</option>
-              <option value="option3">数码产品</option>
-              <option value="option3">笔记本电脑</option>
-              <option value="option3">平板电脑</option>
-              <option value="option3">只能手机</option>
-              <option value="option3">超极本</option>
-            </select>
-          </div>
-        </div>
+        
         <div class="am-u-sm-12 am-u-md-3">
           <div class="am-input-group am-input-group-sm">
             <input type="text" class="am-form-field">
@@ -62,13 +50,16 @@
             <table class="am-table am-table-striped am-table-hover table-main">
               <thead>
               <tr>
-                <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">文章类型名称</th><th class="table-type">描述</th><th class="table-set">操作</th>
+                  <th class="table-check"><input onclick="selectAll()" type="checkbox" name="controlAll" style="controlAll" id="controlAll" class="tpl-table-fz-check"></th>
+                  <th class="table-id">ID</th><th class="table-title">文章类型名称</th>
+                  <th class="table-type">描述</th>
+                  <th class="table-set">操作</th>
               </tr>
               </thead>
               <tbody>
                <%for(var i=0;i<articletypes.length;i++){ %>
               <tr>
-                <td><input type="checkbox" /></td>
+                <td><input type="checkbox" name="selected"/></td>
                 <td><%=i+1%></td>
                 <td><a href="#"><%=articletypes[i].typeName%></a></td>
                 <td><%=articletypes[i].description%></td>
@@ -123,16 +114,37 @@
   <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
 </footer>
 
+ <script>
+        function selectAll(){
+            var checklist = document.getElementsByName('selected');
+            if(document.getElementById('controlAll').checked) {
+                for(var i=0;i<checklist.length;i++) {
+                    checklist[i].checked = 1;
+                }
+            }else{
+                for(var j=0;j<checklist.length;j++) {
+                    checklist[j].checked = 0;
+                }
+            }
+        }
+        
+    </script>
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
 <!--[if lt IE 9]>
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/stylesheets/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="assets/js/jquery.min.js"></script>
+<script src="/javascripts/jquery.min.js"></script>
 <!--<![endif]-->
 <script src="/javascripts/amazeui.min.js"></script>
 <script src="/javascripts/app.js"></script>
+ <script>
+		$('#collapse-nav1').collapse();
+		$('#typeList a:first-child').append('<span class="am-icon-star am-fr am-margin-right admin-icon-red"></span>');
+	</script>
 </body>
 </html>

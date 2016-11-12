@@ -3,13 +3,13 @@
       <ul class="am-list admin-sidebar-list">
         <li><a href="admin-index.html"><span class="am-icon-home"></span> 首页</a></li>
         <li class="admin-parent">
-          <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-file"></span> 稿件管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <a class="am-cf" href="javascript:;" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-file"></span> 稿件管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
           <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
-            <li id="articleadd"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>新增稿件</a></li>
-            <li id="articlelist"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>稿件列表</a></li>
+            <li id="add"><a href="/article/add" class="am-cf"><span class="am-icon-check"></span>新增稿件</a></li>
+            <li id="list"><a href="/article/list" class="am-cf"><span class="am-icon-check"></span>稿件列表</a></li>
             <li id="check"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>审核稿件</a></li>
-            <li id="typeadd"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>新增类别</a></li>
-            <li id="typelist"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>类别列表</a></li>
+            <li id="type"><a href="/article/type" class="am-cf"><span class="am-icon-check"></span>新增类别</a></li>
+            <li id="typeList"><a href="/article/typeList" class="am-cf"><span class="am-icon-check"></span>类别列表</a></li>
             <li id="out"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>外部稿件</a></li>
           </ul>
         </li>
@@ -27,25 +27,29 @@
           <a class="am-cf" data-am-collapse="{target: '#collapse-nav3'}"><span class="am-icon-file"></span> 一键发布<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
           <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav3">
             <li id="towechat"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>发布到微信</a></li>
-            <li id="toweibo"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>发布到微博</a></li>
-            <li id="toweb"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>发布到网站</a></li>
-            <li id="tofirt"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>发布到头条</a></li>
+            
           </ul>
         </li>
+
+         <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav5'}"><span class="am-icon-file"></span>预约申请管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav5">
+            <li id=""><a href="/chargemessage" class="am-cf"><span class="am-icon-check"></span>检举信息</a></li>
+            <li id=""><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>律师预约</a></li>
+            <li id=""><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>档案查询预约</a></li>
+            <li id=""><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>案件查询预约</a></li>
+          </ul>
+        </li>
+
 
         <li class="admin-parent">
           <a class="am-cf" data-am-collapse="{target: '#collapse-nav4'}"><span class="am-icon-file"></span> 系统管理<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
           <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav4">
             <li id="setsystem"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>系统设置</a></li>
             <li id="setwechat"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>微信设置</a></li>
-            <li id="setweibo"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>微博设置</a></li>
-            <li id="setweb"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>网站设置</a></li>
-            <li id="setfirst"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>头条设置</a></li>
-            <li id="setsubscribe "><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>订阅设置</a></li>
-            <li id="setbackup"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>数据备份</a></li>
+           
             <li id="setoption"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>操作记录</a></li>
-            <li id="settouch"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>触屏设置</a></li>
-            <li id="setprojector"><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>投影仪设置</a></li>
+    
           </ul>
         </li>
       </ul>
@@ -53,15 +57,10 @@
       <div class="am-panel am-panel-default admin-sidebar-panel">
         <div class="am-panel-bd">
           <p><span class="am-icon-bookmark"></span> 公告</p>
-          <p>时光静好，与君语；细水流年，与君同。—— Amaze UI</p>
+          <p>暂无公告</p>
         </div>
       </div>
 
-      <div class="am-panel am-panel-default admin-sidebar-panel">
-        <div class="am-panel-bd">
-          <p><span class="am-icon-tag"></span> wiki</p>
-          <p>Welcome to the Amaze UI wiki!</p>
-        </div>
-      </div>
+      
     </div>
   </div>

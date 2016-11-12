@@ -5,7 +5,9 @@ var csrfProtection = csurf({ cookie: true });
 var Account = require('../models/account');
 var router = express.Router();
 var Procuratorate = require('../models/procuratorate');
-
+var LiasionPeople = require('../models/LiasionPeople');
+var StreetBlock = require('../models/streetblock');
+var Charge = require('../models/charge');
 router.get('/', function(req, res, next) {
     res.render('admin/index', { title: 'demo', user: req.user });
 });
@@ -35,36 +37,76 @@ router.post('/procuratorate', function(req, res, next) {
     })
 })
 
-router.get('/list', function(req, res, next) {
 
-    res.render('edit', { title: '文章列表' });
+//前台控诉举报
+router.get('/accuse', function(req, res, next) {
+    res.render('accuse', { title: '控诉举报' });
 })
-router.get('/list1', function(req, res, next) {
 
-    res.render('list1', { title: '文章列表'});
+router.post('/accuse', function(req, res, next) {
+    var name = req.body.name;
+    var tel = req.body.tel;
+    var content = req.body.content;
+    var type = req.body.type;
+    var charge = new Charge({
+        name: name,
+        tel: tel,
+        content: content,
+        type: type
+    })
+
+    charge.save(function(err, doc) {
+        if (err) console.log(err);
+        console.log(doc);
+        res.redirect('/accuse');
+    })
 })
-router.get('/list2', function(req, res, next) {
 
-    res.render('list2', { title: '文章类型列表'});
+//后台获取举报信息页面
+router.get('/chargemessage', function(req, res, next) {
+    Charge.find({}, function(err, charges) {
+        res.render('chargeMessage', { title: '举报', charges: charges });
+    })
 })
-router.get('/list3', function(req, res, next) {
 
-    res.render('list3', { title: '检举信息列表'});
+//后台巡检室主任页面
+router.get('/liasion', function(req, res, next) {
+    res.render('liasionPeople', { title: '巡检室主任' });
 })
-router.get('/input', function(req, res, next) {
 
-    res.render('input', { title: '新增稿件'});
+router.post('/liasion', function(req, res, next) {
+        var name = req.body.name;
+        var tel = req.body.tel;
+        var address = req.body.address;
+        var liasionpeople = new LiasionPeople({
+            name: name,
+            tel: tel,
+            address: address
+        })
+        liasionpeople.save(function(err, doc) {
+            if (err) console.log(err);
+
+            res.redirect('/liasion')
+        })
+
+    })
+    //后台街道办
+router.get('/streetBlock', function(req, res, next) {
+    res.render('streetblock', { title: '街道办' });
 })
-router.get('/input1', function(req, res, next) {
 
-    res.render('input1', { title: '新增稿件类型'});
-})
-router.get('/input2', function(req, res, next) {
+router.post('/streetBlock', function(req, res, next) {
+    var streetName = req.body.streetName;
+    var content = req.body.content;
+    var streetblock = new StreetBlock({
+        streetName: streetName,
+        content: content
+    })
 
-    res.render('input2', { title: '新增主任名单'});
-})
-router.get('/input3', function(req, res, next) {
-
-    res.render('input3', { title: '新增街道联络员名单'});
+    streetblock.save(function(err, doc) {
+        if (err) console.log(err);
+        console.log(doc);
+        res.redirect('/streetBlock');
+    })
 })
 module.exports = router;

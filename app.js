@@ -17,6 +17,7 @@ var csurf = require('csurf');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var article = require('./routes/article');
+var ueditor = require('./routes/ueditor');
 
 var expiryDate = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
 // setup route middlewares 
@@ -64,7 +65,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/article', article);
-
+app.use('/ueditor', ueditor);
 // passport config
 var Account = require('./models/account');
 passport.use(Account.createStrategy());

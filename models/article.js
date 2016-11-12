@@ -11,7 +11,8 @@ var Article = new Schema({
     comment: String,
     readNums: Number,
     isExpired: Boolean,
-    pushTime: Date
+    createAt: { type: Date, default: Date.now },
+    updateAt: { type: Date, default: Date.now },
 
 });
 

@@ -1,42 +1,33 @@
 <!doctype html>
 <html>
-
 <head>
-   <%- include('admin/portal/head'); %>
-   <script src="/javascripts/echarts.min.js"></script>
+    <%- include('admin/portal/head'); %>
+    <script src="/javascripts/echarts.min.js"></script>
+   
 </head>
-
-<body data-type="generalComponents">
-      <%- include('admin/portal/header') %>
-
-    <div class="tpl-page-container tpl-page-header-fixed">
-         <%- include('admin/portal/sidernav') %>
-
-        <div class="tpl-content-wrapper">
-            <div class="tpl-content-page-title">
-                稿件管理
-            </div>
-            <ol class="am-breadcrumb">
-                <li><a href="#" class="am-icon-home">首页</a></li>
-                <li><a href="#">稿件管理</a></li>
-                <li class="am-active">编辑稿件</li>
-            </ol>
-            <div class="tpl-portlet-components">
-                <div class="portlet-title">
-                    <div class="caption font-green bold">
-                        <span class="am-icon-code"></span> 编辑稿件
-                    </div>
-                   
+<body data-type="index">
+	<!-- topbar start //-->
+    <%- include('admin/portal/header') %>
+	<!-- topbar end //-->
+    <div class="am-cf admin-main">
+    			<!-- side nav bar start //-->
+        <%- include('admin/portal/sidernav') %>
+			<!-- side nav bar end //-->
 
 
-                </div>
+<div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">稿件管理</strong> / <small>编辑稿件</small></div>
+      </div>
 
-                <div class="tpl-block">
+      <hr/>
 
-                    <div class="am-g">
-                        <div class="tpl-form-body tpl-form-line">
-                            <form class="am-form tpl-form-line-form" action="/article/update" method="post">
-                                <input type="hidden" name="_id" value="<%=articles._id%>">
+      
+
+        <div class="am-u-sm-12 am-u-md-12 am-u-md-pull-12">
+          <form class="am-form am-form-horizontal"  action="/article/update" method="post">
+           <input type="hidden" name="_id" value="<%=articles._id%>">
                                 <div class="am-form-group">
                                     <label for="title" class="am-u-sm-3 am-form-label">标题 <span class="tpl-form-line-small-title">Title</span></label>
                                     <div class="am-u-sm-9">
@@ -45,13 +36,7 @@
                                     </div>
                                 </div>
 
-                                <div class="am-form-group">
-                                    <label for="user-email" class="am-u-sm-3 am-form-label">发布时间 <span class="tpl-form-line-small-title">Time</span></label>
-                                    <div class="am-u-sm-9">
-                                        <input type="text" class="am-form-field tpl-form-no-bg" placeholder="发布时间" name="pushTime" value="<%=articles.pushTime%>" data-am-datepicker="" readonly/>
-                                        
-                                    </div>
-                                </div>
+                                
                                 
                                 <div class="am-form-group">
                                     <label for="user-weibo" class="am-u-sm-3 am-form-label">添加分类 <span class="tpl-form-line-small-title">Type</span></label>
@@ -99,22 +84,41 @@
                                         <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交修改</button>
                                     </div>
                                 </div>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
+          </form>
         </div>
-
+      </div>
     </div>
-  <script src="/javascripts/jquery.min.js"></script>
-    <script src="/javascripts/amazeui.min.js"></script>
-    <script src="/javascripts/iscroll.js"></script>
-    <script src="/javascripts/app.js"></script>
-</body>
 
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+
+  </div>
+  <!-- content end -->
+
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<footer>
+  <hr>
+  <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="/stylesheets/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="/javascripts/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="/javascripts/amazeui.min.js"></script>
+<script src="/javascripts/app.js"></script>
+
+</body>
 </html>

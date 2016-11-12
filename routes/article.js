@@ -24,7 +24,7 @@ router.post('/type', function(req, res, next) {
     });
     articleType.save(function(err, articletype) {
         if (err) console.log(err);
-        res.redirect('/article/type');
+        res.redirect('/article/typeList');
     });
 })
 
@@ -88,12 +88,12 @@ router.post('/add', function(req, res, next) {
     var content = req.body.content;
     var articleType = req.body.articleType;
     var procuratorate = req.body.procuratorate;
-    var pushTime = req.body.pushTime;
+
     var article = new Article({
         title: title,
         author: author,
         content: content,
-        pushTime: pushTime,
+
         procuratorate: procuratorate,
         articleType: articleType
     });
@@ -101,7 +101,7 @@ router.post('/add', function(req, res, next) {
     article.save(function(err, articles) {
         if (err) console.log(err);
         console.log(articles);
-        res.redirect('/article/add');
+        res.redirect('/article/list');
     })
 })
 
@@ -119,12 +119,15 @@ router.get('/list', function(req, res, next) {
 //删除文章
 
 router.get('/del', function(req, res, next) {
+
     var _id = req.query._id;
     console.log(_id);
     Article.remove({ _id: _id }, function(err) {
         if (err) console.log(err);
         res.redirect('/article/list');
     })
+
+
 })
 
 //获取编辑文章页面
@@ -146,17 +149,22 @@ router.post('/update', function(req, res, next) {
     var _id = req.body._id;
     var title = req.body.title;
     var author = req.body.author;
-    var pushTime = req.body.pushTime;
+
     var content = req.body.content;
     var articleType = req.body.articleType;
     var procuratorate = req.body.procuratorate;
-    Article.update({ _id: _id }, { $set: { title: title, author: author, pushTime: pushTime, content: content, articleType: articleType, procuratorate: procuratorate } }, function(err, result) {
+    Article.update({ _id: _id }, { $set: { title: title, author: author, content: content, articleType: articleType, procuratorate: procuratorate } }, function(err, result) {
         if (err) console.log(err);
         res.redirect('/article/list');
     })
 })
 
+router.get('/sousuo', function(req, res, next) {
+    res.render('articletype', { title: '文章类型发表' });
 
+})
+
+/*
 //本院简介
 router.get('/introduction', function(req, res, next) {
     Article
@@ -375,4 +383,5 @@ router.get('/attorneyAddress', function(req, res, next) {
 router.get('/maps', function(req, res, next) {
     res.render('maps', { title: '检察地图' });
 });
+*/
 module.exports = router;
