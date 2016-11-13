@@ -124,7 +124,9 @@ router.get('/del', function(req, res, next) {
     console.log(_id);
     Article.remove({ _id: _id }, function(err) {
         if (err) console.log(err);
+
         res.redirect('/article/list');
+
     })
 
 
@@ -159,10 +161,7 @@ router.post('/update', function(req, res, next) {
     })
 })
 
-router.get('/sousuo', function(req, res, next) {
-    res.render('articletype', { title: '文章类型发表' });
 
-})
 
 /*
 //本院简介

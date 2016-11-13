@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var flash = require('connect-flash');
 // for safe
 var helmet = require('helmet');
 
@@ -56,6 +57,8 @@ app.use(require('express-session')({
     resave: false,
     saveUninitialized: false
 }));
+app.use(flash());
+
 //启用passport
 app.use(passport.initialize());
 app.use(passport.session());

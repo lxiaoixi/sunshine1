@@ -8,8 +8,10 @@ var Procuratorate = require('../models/procuratorate');
 var LiasionPeople = require('../models/LiasionPeople');
 var StreetBlock = require('../models/streetblock');
 var Charge = require('../models/charge');
-router.get('/', function(req, res, next) {
+var auth = require('../middlewares/authrization');
+router.get('/', auth.requireLogin, function(req, res, next) {
     res.render('admin/index', { title: 'demo', user: req.user });
+
 });
 
 //检察院数据存储
@@ -109,4 +111,6 @@ router.post('/streetBlock', function(req, res, next) {
         res.redirect('/streetBlock');
     })
 })
+
+
 module.exports = router;

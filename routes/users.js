@@ -19,19 +19,20 @@ router.post('/register', function(req, res, next) {
         }
 
         passport.authenticate('local')(req, res, function() {
-            res.redirect('/');
+            res.redirect('/users/login');
         });
 
     });
 });
 
 router.get('/login', csrfProtection, function(req, res, next) {
-    res.render('login', { title: '阳光检务登录', csrfToken: req.csrfToken(), user: req.user });
+    res.render('login', { title: '阳光检务登录', csrf_token: req.csrfToken(), user: req.user });
 });
 
-router.post('/login', passport.authenticate('local'), function(req, res, next) {
-    res.redirect('/');
-});
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/',
+
+}));
 
 router.get('/logout', function(req, res, next) {
     req.logout();
