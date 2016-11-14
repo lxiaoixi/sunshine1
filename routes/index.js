@@ -9,6 +9,7 @@ var LiasionPeople = require('../models/LiasionPeople');
 var StreetBlock = require('../models/streetblock');
 var Charge = require('../models/charge');
 var auth = require('../middlewares/authrization');
+var upload = require('../config/fileuploads');
 router.get('/', auth.requireLogin, function(req, res, next) {
     res.render('admin/index', { title: 'demo', user: req.user });
 
@@ -112,5 +113,16 @@ router.post('/streetBlock', function(req, res, next) {
     })
 })
 
+//上传文件
+router.get('/upload', function(req, res, next) {
+    res.render('upload', { title: '上传文件' });
+})
+router.post('/upload', upload.single('avatar'), function(req, res, next) {
+    if (req.file) {
+        res.send('文件上传成功')
+        console.log(req.file);
+        console.log(req.body);
+    }
+});
 
 module.exports = router;

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+//调用百度编辑器路由
 var ueditor = require("ueditor")
 var path = require('path');
 
